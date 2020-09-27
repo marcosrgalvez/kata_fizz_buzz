@@ -12,5 +12,5 @@ export const createFizzBuzz = () => {
     return fizzBuzz(ruleSet);
 };
 
-export const fizzBuzz = (ruleSet: Rule[]) => (numbers: number[]) =>
-    numbers.map(n2 => ruleSet.find(rule => rule.predicate(n2))!.trans(n2));
+export const fizzBuzz = (ruleSet: Rule[]) => () =>
+    Array.from({length: 100}, (_, i) => i + 1).map(n => ruleSet.find(rule => rule.predicate(n))!.trans(n));
