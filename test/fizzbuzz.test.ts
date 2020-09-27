@@ -1,45 +1,49 @@
-import { createFizzBuzz } from '../src/fizzbuzz'
+import { createFizzBuzz } from '../src/fizzbuzz';
 
 describe('FizzBuzz', () => {
-    const fizzBuzz = createFizzBuzz()
+    const fizzBuzz = createFizzBuzz();
 
     it('returns "1" for 1 number', () => {
-        expect(fizzBuzz(1)).toEqual('1')
-    })
+        expect(fizzBuzz(1)).toEqual('1');
+    });
 
     it('returns "2" for 2 number', () => {
-        expect(fizzBuzz(2)).toEqual('2')
-    })
+        expect(fizzBuzz(2)).toEqual('2');
+    });
 
     it('returns "Fizz" for 3 number', () => {
-        expect(fizzBuzz(3)).toEqual('Fizz')
-    })
+        expect(fizzBuzz(3)).toEqual('Fizz');
+    });
 
     it('returns "Fizz" for 6 number', () => {
-        expect(fizzBuzz(6)).toEqual('Fizz')
-    })
+        expect(fizzBuzz(6)).toEqual('Fizz');
+    });
 
     it('returns "Buzz" for 5 number', () => {
-        expect(fizzBuzz(5)).toEqual('Buzz')
-    })
+        expect(fizzBuzz(5)).toEqual('Buzz');
+    });
 
     it('returns "Buzz" for 10 number', () => {
-        expect(fizzBuzz(10)).toEqual('Buzz')
-    })
+        expect(fizzBuzz(10)).toEqual('Buzz');
+    });
 
     it('returns "Buzz" for 5 number', () => {
-        expect(fizzBuzz(5)).toEqual('Buzz')
-    })
+        expect(fizzBuzz(5)).toEqual('Buzz');
+    });
 
     it('returns "FizzBuzz" for 15 number', () => {
-        expect(fizzBuzz(15)).toEqual('FizzBuzz')
-    })
+        expect(fizzBuzz(15)).toEqual('FizzBuzz');
+    });
 
     it('returns "Fizz" for number containing 3', () => {
-        expect(fizzBuzz(35)).toEqual('Fizz')
-    })
+        expect(fizzBuzz(35)).toEqual('Fizz');
+    });
 
     it('returns "Buzz" for number containing 5', () => {
-        expect(fizzBuzz(53)).toEqual('Buzz')
-    })
-})
+        expect(fizzBuzz(53)).toEqual('Buzz');
+    });
+
+    it('returns multiple numbers', () => {
+        expect(fizzBuzz(53, [1, 2, 3, 4, 5])).toEqual(['1', '2', 'Fizz', '4', 'Buzz']);
+    });
+});

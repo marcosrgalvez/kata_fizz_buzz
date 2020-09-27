@@ -1,4 +1,4 @@
-import { otherwise, and, contains, isDivisibleBy, or } from './predicate';
+import { and, contains, isDivisibleBy, or, otherwise } from './predicate';
 import { Rule } from './rule';
 
 export const createFizzBuzz = () => {
@@ -12,5 +12,6 @@ export const createFizzBuzz = () => {
     return fizzBuzz(ruleSet);
 };
 
-export const fizzBuzz = (ruleSet: Rule[]) => (n: number) =>
-    ruleSet.find(rule => rule.predicate(n))!.trans(n);
+export const fizzBuzz = (ruleSet: Rule[]) => (n: number, numbers?: number[]) => numbers === undefined
+    ? ruleSet.find(rule => rule.predicate(n))!.trans(n)
+    : numbers.map(n2 => ruleSet.find(rule => rule.predicate(n2))!.trans(n2));
