@@ -1,17 +1,16 @@
-export const fizzBuzz = (aNumber: number) => {
-    if(isDivisibleBy3(aNumber) && isDivisibleBy5(aNumber)) {
-        return 'FizzBuzz'
-    }
-    if(isDivisibleBy3(aNumber)) {
-        return 'Fizz'
-    }
-    if(isDivisibleBy5(aNumber)) {
-        return 'Buzz'
-    }
-    
-    return aNumber.toString();
-}
+import { otherwise, and, contains, isDivisibleBy, or } from './predicate';
+import { Rule } from './rule';
 
-const isDivisibleBy = (divisor: number) => (n: number) => n%divisor === 0
-const isDivisibleBy3 = isDivisibleBy(3)
-const isDivisibleBy5 = isDivisibleBy(5)
+export const createFizzBuzz = () => {
+    const ruleSet: Rule[] = [
+        {predicate: and(isDivisibleBy(3), isDivisibleBy(5)), trans: () => 'FizzBuzz'},
+        {predicate: or(isDivisibleBy(3), contains(3)), trans: () => 'Fizz'},
+        {predicate: or(isDivisibleBy(5), contains(5)), trans: () => 'Buzz'},
+        {predicate: otherwise, trans: n => n.toString()},
+    ];
+
+    return fizzBuzz(ruleSet);
+};
+
+export const fizzBuzz = (ruleSet: Rule[]) => (n: number) =>
+    ruleSet.find(rule => rule.predicate(n))!.trans(n);

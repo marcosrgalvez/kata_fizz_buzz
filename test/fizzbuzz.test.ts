@@ -1,6 +1,8 @@
-import { fizzBuzz } from '../src/fizzbuzz'
+import { createFizzBuzz } from '../src/fizzbuzz'
 
 describe('FizzBuzz', () => {
+    const fizzBuzz = createFizzBuzz()
+
     it('returns "1" for 1 number', () => {
         expect(fizzBuzz(1)).toEqual('1')
     })
@@ -31,5 +33,13 @@ describe('FizzBuzz', () => {
 
     it('returns "FizzBuzz" for 15 number', () => {
         expect(fizzBuzz(15)).toEqual('FizzBuzz')
+    })
+
+    it('returns "Fizz" for number containing 3', () => {
+        expect(fizzBuzz(35)).toEqual('Fizz')
+    })
+
+    it('returns "Buzz" for number containing 5', () => {
+        expect(fizzBuzz(53)).toEqual('Buzz')
     })
 })
