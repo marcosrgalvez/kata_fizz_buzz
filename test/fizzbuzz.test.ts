@@ -44,8 +44,8 @@ describe('FizzBuzz', () => {
     });
 
     it('returns multiple numbers', () => {
-        expect(fizzBuzz(53, [1, 2, 3, 4, 5])).toEqual(['1', '2', 'Fizz', '4', 'Buzz']);
+        expect(fizzBuzz([1, 2, 3, 4, 5])).toEqual(['1', '2', 'Fizz', '4', 'Buzz']);
     });
 
-    const runFizzBuzz = (n: number) => fizzBuzz(n, [n])[0]
+    const runFizzBuzz = (n: number) => fizzBuzz([n])[0]
 });
