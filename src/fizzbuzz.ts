@@ -1,5 +1,5 @@
-export const fizzBuzz = (numbers: number[]) => {
-    return numbers.map(n => fizzBuzzForNumber(n));
+export const fizzBuzz = () => {
+    return Array.from({length: 100}, (_, i) => i + 1).map(n => fizzBuzzForNumber(n));
 };
 
 const fizzBuzzForNumber = (aNumber: number) => {
