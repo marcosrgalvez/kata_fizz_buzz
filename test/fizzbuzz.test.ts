@@ -32,4 +32,8 @@ describe('FizzBuzz', () => {
     it('returns "FizzBuzz" for 15 number', () => {
         expect(fizzBuzz(15)).toEqual('FizzBuzz')
     })
+
+    it('returns multiple numbers', () => {
+        expect(fizzBuzz(53, [1, 2, 3, 4, 5])).toEqual(['1', '2', 'Fizz', '4', 'Buzz']);
+    });
 })
