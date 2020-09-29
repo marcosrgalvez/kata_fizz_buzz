@@ -1,9 +1,5 @@
-export const fizzBuzz = (aNumber: number, numbers?: number[]) => {
-    if (numbers === undefined) {
-        return fizzBuzzForNumber(aNumber);
-    } else {
-        return numbers.map(n => fizzBuzzForNumber(n));
-    }
+export const fizzBuzz = (numbers: number[]) => {
+    return numbers.map(n => fizzBuzzForNumber(n));
 };
 
 const fizzBuzzForNumber = (aNumber: number) => {
