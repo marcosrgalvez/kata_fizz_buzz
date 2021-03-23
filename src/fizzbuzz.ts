@@ -1,16 +1,16 @@
-export const fizzBuzz = (number:number) => {
-    if (divisibleByThreeAndFive(number)){
+export const fizzBuzz = (aNumber:number) => {
+    if (divisibleByThreeAndFive(aNumber)){
         return 'FizzBuzz'
-    }else if (divisibleByThree(number)){
+    }else if (divisibleByThree(aNumber)){
         return 'Fizz'
-    } else if (divisibleByFive(number)){
+    } else if (divisibleByFive(aNumber)){
         return 'Buzz'
-    } else return number
+    } else return aNumber
 }
 
-let isDivisibleBy = (divisor: number) => (number:number) => number % divisor === 0
+let isDivisibleBy = (divisor: number) => (aNumber:number) => aNumber % divisor === 0
 let divisibleByThree = isDivisibleBy(3)
 let divisibleByFive = isDivisibleBy(5)
-let divisibleByThreeAndFive = (number: number) : boolean => divisibleByThree(number) && divisibleByFive(number)
+let divisibleByThreeAndFive = (aNumber: number) : boolean => divisibleByThree(aNumber) && divisibleByFive(aNumber)
 
 
