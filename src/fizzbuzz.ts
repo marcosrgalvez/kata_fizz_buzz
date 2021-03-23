@@ -1,1 +1,1 @@
-export const fizzBuzz = () => 1;
+export const fizzBuzz = (number:number) => number;
