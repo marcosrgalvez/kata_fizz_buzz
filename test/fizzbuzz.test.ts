@@ -1,7 +1,7 @@
 import { fizzBuzz } from '../src/fizzbuzz'
 
-describe('FizzBuzz', () => {
+describe('Always returns 1', () => {
     it('example test', () => {
-        expect(fizzBuzz()).toEqual(undefined)
+        expect(fizzBuzz()).toEqual(1)
     })
 })
