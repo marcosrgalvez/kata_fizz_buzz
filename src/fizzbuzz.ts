@@ -1,7 +1,7 @@
 export const fizzBuzz = (aNumber:number) => {
     if (divisibleByThreeAndFive(aNumber)){
         return 'FizzBuzz'
-    }else if (divisibleByThree(aNumber)){
+    } else if (divisibleByThree(aNumber)){
         return 'Fizz'
     } else if (divisibleByFive(aNumber)){
         return 'Buzz'
